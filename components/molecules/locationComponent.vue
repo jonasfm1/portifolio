@@ -8,7 +8,7 @@
     
     <div class="pt-1">
       <h6>Location</h6>
-      <strong>January 24, 1993</strong>
+      <strong>New York, NY</strong>
     </div>
 
   </section>

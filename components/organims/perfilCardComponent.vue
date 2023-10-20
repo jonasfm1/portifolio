@@ -8,18 +8,26 @@
   </div>
 
   <div class="row d-flex justify-content-center g-0">
-    <div class=" col-7 text-white p-2 role">
+    <div class="col-7 p-2 text-center text-white role">
       <RoleComponent />
     </div>
   </div>
 
   <hr class="text-white ">
 
-  <EmailComponent class="text-white my-4"/>
-  <PhoneComponent class="text-white my-3"/>
-  <BirthdayComponent class="text-white my-4"/>
-  <LocationComponent class="text-white my-4"/>
-  <SocialMidiaComponent class="text-white my-4"/>
+  <div class="d-sm-flex d-md-flex d-lg-block justify-content-between px-md-3">
+    <EmailComponent class="text-white my-4"/>
+    <PhoneComponent class="text-white my-3"/>
+  </div>
+  
+  <div class="d-sm-flex d-md-flex d-lg-block justify-content-between px-md-3">
+    <BirthdayComponent class="text-white my-4"/>
+    <LocationComponent class="d-flex text-white my-4 me-4"/>
+  </div>
+
+  <div>
+    <SocialMidiaComponent class="text-white my-4"/>
+  </div>
 </template>
 
 <script lang="ts">
@@ -34,7 +42,16 @@
   import SocialMidiaComponent from '../molecules/socialMidiaComponent.vue';
 
   export default defineComponent({
-    components: { ImagePerfil, NameComponent, RoleComponent, EmailComponent, PhoneComponent, BirthdayComponent, LocationComponent, SocialMidiaComponent }
+    components: { 
+      ImagePerfil, 
+      NameComponent, 
+      RoleComponent, 
+      EmailComponent, 
+      PhoneComponent, 
+      BirthdayComponent, 
+      LocationComponent, 
+      SocialMidiaComponent
+    }
   })
 </script>
 

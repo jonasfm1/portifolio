@@ -1,5 +1,5 @@
 <template>
-  <div>Software engineer</div>
+  <div>Software Engineer</div>
 </template>
 
 <script lang="ts">

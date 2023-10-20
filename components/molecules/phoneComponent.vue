@@ -8,7 +8,7 @@
     
     <div class="pt-1">
       <h6>Phone</h6>
-      <strong>55 11 94992 - 1511</strong>
+      <strong>+1 908 267 4697</strong>
     </div>
 
   </section>
