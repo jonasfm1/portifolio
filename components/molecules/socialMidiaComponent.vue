@@ -3,7 +3,7 @@
   <section class="d-flex justify-content-center">
     
     <div class="mx-2 mt-2">
-      <a href="https://www.linkedin.com/in/jonas-desenvolvedor-frontend/" target="_blank">
+      <a href="https://www.linkedin.com/in/jonas-software-engineer/" target="_blank">
         <Icon name="bi:linkedin" size="30" color="lightgreen" />
       </a>
     </div>

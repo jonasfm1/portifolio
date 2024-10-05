@@ -79,7 +79,12 @@
       frontendDeveloper,
       backendDeveloper,
       fullstackDeveloper
-    }
+    },
+    async beforeCreate() {
+      const {title} = await $fetch('https://jsonplaceholder.typicode.com/posts/1')
+      console.log(title)
+    },
+
   })
 
 </script>

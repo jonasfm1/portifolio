@@ -1,4 +1,5 @@
 <template>
+  <!-- INTRODUCING MYSELF -->
   <div class="m-3">
     <p>
       Graduated in information technology management from Anhembi Morumbi University,
@@ -8,26 +9,32 @@
       in development and improvement.
     </p>
 
+    <!-- CURRENTS ACTIVITIES -->
     <div class="m-3 pb-3 pt-3">
       <h4>What I'm Doing</h4>
       <backendInfo />
     </div>
   </div>
 
-  <div class="m-3 testimonials">
-    <!-- CARD TESTEMONIAL -->
-    <div></div>
-  </div>
+  <!-- CARD TESTEMONIAL COMPONENTE -->
+  <TestimonialComponent />
+
+  <!-- CUSTUMERS -->
+  <ClientsComponent />
 
 </template>
 
 <script lang="ts">
-  import { defineComponent } from 'vue' 
+  import { defineComponent } from 'vue'
   import backendInfo from '../molecules/backendInfo.vue';
+  import TestimonialComponent from './TestimonialComponent.vue';
+  import ClientsComponent from './ClientsComponent.vue';
 
   export default defineComponent({
     components: { 
-      backendInfo
+      backendInfo,
+      TestimonialComponent,
+      ClientsComponent
     }
   })
   

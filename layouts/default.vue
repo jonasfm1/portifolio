@@ -7,7 +7,7 @@
     </section>
     
     <!-- SESSAO DE DADOS DETALHADOS -->
-    <section class="col-12 col-lg-6 my-5 profissional-info">
+    <section class="col-12 col-lg-6 mt-5 pt-3 pb-4 px-4 profissional-info">
       <slot />
     </section>
 

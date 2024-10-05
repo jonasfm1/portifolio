@@ -8,9 +8,9 @@
       </div>
   
       <!-- NAVEBAR WITH CHOOSE -->
-      <div class="col-12 col-sm-12 col-md-8 col-xl-8 order-1 order-sm-1 order-md-2 mb-4 my-md-2 mb-lg-2 bg-secondary navbar-detail pe-lg-0">
+      <div class="col-12 col-sm-12 col-md-8 col-xl-8 order-1 order-sm-1 order-md-2 mb-4 my-md-2 mb-lg-2 navbar-detail pe-lg-0">
 
-        <nav class="navbar navbar-expand-md">
+        <nav class="py-2 d-flex justify-content-between">
   
           <div class="navbar-collapse navbar-collapse" id="navbarNav">
   
@@ -20,7 +20,7 @@
 
                 <div class="col-3 col-xl-4 col- pe-0 ps-xl-2">
                   <li class="mx-0 active">
-                    <a @click="currentView = 'About-Me'" class="nav-link text-white px-0 fs-6 fw-bolder" href="#">
+                    <a @click="currentView = 'About-Me'" class="nav-link px-0 fs-6 fw-bolder nav-menu" href="#">
                       About Me
                     </a>
                   </li>
@@ -28,7 +28,7 @@
 
                 <div class="col-3 col-xl-3">
                   <li class="me-1">
-                    <a @click="currentView = 'Resume'" class="nav-link text-white fs-6 fw-bolder pe-lg-0" href="#">
+                    <a @click="currentView = 'Resume'" class="nav-link fs-6 fw-bolder pe-lg-0 nav-menu" href="#">
                       Resume
                     </a>
                   </li>
@@ -36,7 +36,7 @@
 
                 <div class="col-3 col-xl-3">
                   <li class="me-1">
-                    <a @click="currentView = 'Portifolio'" class="nav-link text-white fs-6 fw-bolder" href="#">
+                    <a @click="currentView = 'Portifolio'" class="nav-link fs-6 fw-bolder nav-menu" href="#">
                       Portifolio
                     </a>
                   </li>
@@ -44,7 +44,7 @@
 
                 <div class="col-2 col-xl-2">
                   <li class="me-1">
-                    <a @click="currentView = 'Contact'" class="nav-link text-white fs-6 fw-bolder" href="#">
+                    <a @click="currentView = 'Contact'" class="nav-link fs-6 fw-bolder nav-menu" href="#">
                       Contact
                     </a>
                   </li>
@@ -94,5 +94,14 @@
   .nav-item{
     margin-left: 15px !important;
     margin-right: 15px !important;
+  }
+  .--bs-navbar-color{
+    color:white;
+  }
+  .nav-menu:hover, .nav-menu:focus{
+    color:lightgreen;
+  }
+  h2{
+    color: lightgreen;
   }
 </style>

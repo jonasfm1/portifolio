@@ -1,5 +1,5 @@
 <template>
-  <img src="~/assets/img/me.jpeg" alt="imagem de perfil">
+  <img src="https://github.com/jonasfm1.png" alt="imagem de perfil">
 </template>
 
 <script lang="ts">
