@@ -5,7 +5,7 @@
 
     <!-- FRONTEND CARD -->
     <div class="col-sm-6 mb-5">
-      <div class="card frontend-card">
+      <div @mouseenter="mouseIn" class="card frontend-card">
         <div class="card-body d-flex">
           <!-- IMAGE DIV -->
           <div>
@@ -24,7 +24,7 @@
 
     <!-- BACKEND CARD -->
     <div class="col-sm-6 mb-5">
-      <div class="card backend-card">
+      <div @mouseenter="mouseIn" class="card backend-card">
         <div class="card-body d-flex">
           <!-- IMAGE DIV -->
           <div>
@@ -47,7 +47,7 @@
   <div class="d-flex row">  
     <!-- FULLSTACK CARD -->
     <div class="col-sm-6">
-      <div class="card frontend-card">
+      <div @mouseenter="mouseIn" class="card fullstack-card">
         <div class="card-body d-flex">
           <!-- IMAGE DIV -->
           <div>
@@ -73,12 +73,31 @@
   import backendDeveloper from '../atoms/backendDeveloper.vue';
   import fullstackDeveloper from '../atoms/fullstackDeveloper.vue';
 
-
   export default defineComponent({
-    components: { 
+    components: {
       frontendDeveloper,
       backendDeveloper,
       fullstackDeveloper
+    },
+    methods:{
+      mouseIn(event: MouseEvent) {
+        let neonCard = event.target as HTMLElement;
+        console.log(neonCard)
+        let neonClasses = ['frontend-card','backend-card','fullstack-card']
+        let neonEffect = [
+          'rgba(46, 240, 78, 0.4) -5px 5px',
+          'rgba(46, 240, 78, 0.3) -10px 10px',
+          'rgba(49, 240, 46, 0.2) -15px 15px',
+          'rgba(46, 240, 53, 0.1) -20px 20px',
+          'rgba(46, 240, 62, 0.05) -25px 25px'
+        ]
+
+        // if(neonClasses.some(hasNeonClass => neonCard.classList.contains(hasNeonClass))){
+        //   neonCard.style.boxShadow = "rgba(46, 240, 78, 0.4) -5px 5px, rgba(46, 240, 78, 0.3) -10px 10px, rgba(49, 240, 46, 0.2) -15px 15px, rgba(46, 240, 53, 0.1) -20px 20px, rgba(46, 240, 62, 0.05) -25px 25px";
+        //   neonCard.style.boxShadow = 'rgba(46, 240, 78, 0.3) -10px 10px'
+        // }
+
+      }
     },
     async beforeCreate() {
       const {title} = await $fetch('https://jsonplaceholder.typicode.com/posts/1')
@@ -86,29 +105,44 @@
     },
 
   })
-
 </script>
 
 <style scoped>
-  .frontend-card{
+  .frontend-card, .fullstack-card, .backend-card{
     background-color: #222222;
-    box-shadow: rgba(46, 240, 78, 0.4) -5px 5px, rgba(46, 240, 78, 0.3) -10px 10px, rgba(49, 240, 46, 0.2) -15px 15px, rgba(46, 240, 53, 0.1) -20px 20px, rgba(46, 240, 62, 0.05) -25px 25px;
+    box-shadow: none;
+    transition: box-shadow 0.3s ease-in-out;
+    animation: move-shadow 2s infinite alternate;
   }
 
-  .backend-card{
-    background-color: #222222;
-    box-shadow: rgba(46, 240, 78, 0.4) -5px 5px, rgba(46, 240, 78, 0.3) -10px 10px, rgba(49, 240, 46, 0.2) -15px 15px, rgba(46, 240, 53, 0.1) -20px 20px, rgba(46, 240, 62, 0.05) -25px 25px;
+  @keyframes move-shadow {
+    0% {
+      box-shadow: none;
+    }
+    20% {
+      box-shadow: rgba(46, 240, 78, 0.4) -5px 5px;
+    }
+    40% {
+      box-shadow: rgba(46, 240, 78, 0.4) -5px 5px, rgba(46, 240, 78, 0.3) -10px 10px;
+    }
+    60% {
+      box-shadow: rgba(46, 240, 78, 0.4) -5px 5px, rgba(46, 240, 78, 0.3) -10px 10px, rgba(49, 240, 46, 0.2) -15px 15px;
+    }
+    80% {
+      box-shadow: rgba(46, 240, 78, 0.4) -5px 5px, rgba(46, 240, 78, 0.3) -10px 10px, rgba(49, 240, 46, 0.2) -15px 15px, rgba(46, 240, 53, 0.1) -20px 20px;
+    }
+    100% {
+      box-shadow: rgba(46, 240, 78, 0.4) -5px 5px, rgba(46, 240, 78, 0.3) -10px 10px, rgba(49, 240, 46, 0.2) -15px 15px, rgba(46, 240, 53, 0.1) -20px 20px, rgba(46, 240, 62, 0.05) -25px 25px;
+    }
   }
 
   .frontendImg, .backendImg{
     height: 50px;
     width: 50px;
   }
-
   .content-frontend{
     font-size: 12px;
   }
-
   .card:hover {
     cursor: pointer;
     transform: scale(1.02);
