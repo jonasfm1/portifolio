@@ -10,5 +10,8 @@
 </script>
 
 <style scoped>
-
+  .backendImg{
+    height: 50px;
+    width: 50px;
+  }
 </style>

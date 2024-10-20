@@ -58,7 +58,7 @@
 <style scoped>
   .img-perfil{
     height: 200px;
-    widows: 200px;
+    width: 200px;
     border-radius: 20px;
   }
   .role{

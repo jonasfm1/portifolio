@@ -1,5 +1,5 @@
 <template>
-  <img class="backendImg" src="~/assets/img/fullstackIcon.png" alt="icone backend">
+  <img class="webDevelop" src="~/assets/img/fullstackIcon.png" alt="icone backend">
 </template>
 
 <script lang="ts">
@@ -10,5 +10,8 @@ export default defineComponent({
 </script>
 
 <style scoped>
-
+  .webDevelop{
+    height: 50px;
+    width: 50px;
+  }
 </style>

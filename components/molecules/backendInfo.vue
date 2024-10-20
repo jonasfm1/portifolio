@@ -40,11 +40,11 @@
         </div>
       </div>
     </div>
-
   </div>
 
   <!-- SECOND ROW -->
-  <div class="d-flex row">  
+  <div class="d-flex row">
+
     <!-- FULLSTACK CARD -->
     <div class="col-sm-6">
       <div @mouseenter="mouseIn" class="card fullstack-card">
@@ -80,24 +80,7 @@
       fullstackDeveloper
     },
     methods:{
-      mouseIn(event: MouseEvent) {
-        let neonCard = event.target as HTMLElement;
-        console.log(neonCard)
-        let neonClasses = ['frontend-card','backend-card','fullstack-card']
-        let neonEffect = [
-          'rgba(46, 240, 78, 0.4) -5px 5px',
-          'rgba(46, 240, 78, 0.3) -10px 10px',
-          'rgba(49, 240, 46, 0.2) -15px 15px',
-          'rgba(46, 240, 53, 0.1) -20px 20px',
-          'rgba(46, 240, 62, 0.05) -25px 25px'
-        ]
 
-        // if(neonClasses.some(hasNeonClass => neonCard.classList.contains(hasNeonClass))){
-        //   neonCard.style.boxShadow = "rgba(46, 240, 78, 0.4) -5px 5px, rgba(46, 240, 78, 0.3) -10px 10px, rgba(49, 240, 46, 0.2) -15px 15px, rgba(46, 240, 53, 0.1) -20px 20px, rgba(46, 240, 62, 0.05) -25px 25px";
-        //   neonCard.style.boxShadow = 'rgba(46, 240, 78, 0.3) -10px 10px'
-        // }
-
-      }
     },
     async beforeCreate() {
       const {title} = await $fetch('https://jsonplaceholder.typicode.com/posts/1')
@@ -111,42 +94,43 @@
   .frontend-card, .fullstack-card, .backend-card{
     background-color: #222222;
     box-shadow: none;
-    transition: box-shadow 0.3s ease-in-out;
-    animation: move-shadow 2s infinite alternate;
+    transition: box-shadow 0.3s ease-in;
+  }
+
+  .frontend-card:hover, .fullstack-card:hover, .backend-card:hover{
+    animation: move-shadow 1.7s infinite;
   }
 
   @keyframes move-shadow {
     0% {
-      box-shadow: none;
-    }
-    20% {
       box-shadow: rgba(46, 240, 78, 0.4) -5px 5px;
     }
-    40% {
+    20% {
       box-shadow: rgba(46, 240, 78, 0.4) -5px 5px, rgba(46, 240, 78, 0.3) -10px 10px;
     }
-    60% {
+    40% {
       box-shadow: rgba(46, 240, 78, 0.4) -5px 5px, rgba(46, 240, 78, 0.3) -10px 10px, rgba(49, 240, 46, 0.2) -15px 15px;
     }
-    80% {
+    60% {
       box-shadow: rgba(46, 240, 78, 0.4) -5px 5px, rgba(46, 240, 78, 0.3) -10px 10px, rgba(49, 240, 46, 0.2) -15px 15px, rgba(46, 240, 53, 0.1) -20px 20px;
     }
-    100% {
+    80% {
       box-shadow: rgba(46, 240, 78, 0.4) -5px 5px, rgba(46, 240, 78, 0.3) -10px 10px, rgba(49, 240, 46, 0.2) -15px 15px, rgba(46, 240, 53, 0.1) -20px 20px, rgba(46, 240, 62, 0.05) -25px 25px;
+    }
+    100% {
+      box-shadow: none;
     }
   }
 
-  .frontendImg, .backendImg{
-    height: 50px;
-    width: 50px;
-  }
   .content-frontend{
     font-size: 12px;
   }
+
   .card:hover {
     cursor: pointer;
     transform: scale(1.02);
   }
+
   .card {
     transition: transform 0.5s ease;
   }

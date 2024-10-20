@@ -2,7 +2,7 @@
   <main class="row g-0 justify-content-around min-vh-100">
 
     <!-- SESSAO DE PERFIL -->
-    <section class="col-12 col-lg-4 align-self-start mt-5 pt-3 px-4 introduction">
+    <section class="col-12 col-lg-4 align-self-start mt-0 mt-lg-5 pt-3 px-4 introduction">
       <PerfilCardComponent />
     </section>
     

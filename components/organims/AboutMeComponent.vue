@@ -10,7 +10,7 @@
     </p>
 
     <!-- CURRENTS ACTIVITIES -->
-    <div class="m-3 pb-3 pt-3">
+    <div class="mx-0 my-3 pb-3 pt-3">
       <h4>What I'm Doing</h4>
       <backendInfo />
     </div>

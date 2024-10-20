@@ -1,10 +1,10 @@
 <template>
   <!-- CUSTUMER NAME -->
   <div class="col-4">
-    <h3>CADD</h3>
     <div>
-      <img src="./pega-name-via-apy">
+      <img src="../../assets/images/company-logo.png" alt="company-logo">
     </div>
+    <h3>Caddesign</h3>
   </div>
 </template>
 
