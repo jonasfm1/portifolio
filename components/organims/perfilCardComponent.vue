@@ -4,7 +4,8 @@
   </div>
   
   <div class="d-flex justify-content-center text-white fs-2 my-3">
-    <NameComponent />
+    <NuxtLoadingIndicator />
+    <NameComponent :name='myName' />
   </div>
 
   <div class="row d-flex justify-content-center g-0">
@@ -42,7 +43,7 @@
   import SocialMidiaComponent from '../molecules/socialMidiaComponent.vue';
 
   export default defineComponent({
-    components: { 
+    components: {
       ImagePerfil, 
       NameComponent, 
       RoleComponent, 
@@ -51,7 +52,21 @@
       BirthdayComponent, 
       LocationComponent, 
       SocialMidiaComponent
-    }
+    },
+    data() {
+      return {
+        myName: String,
+      }
+    },
+    beforeCreate: async function () {
+      try {
+        const { Personal_information } = await $fetch('http://127.0.0.1:5000');
+        this.myName = Personal_information.name;
+        console.log(Personal_information)
+      } catch (error) {
+        console.error('Server Error', error);
+      }
+    },
   })
 </script>
 

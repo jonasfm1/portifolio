@@ -1,5 +1,5 @@
 <template>
-  <div class="row g-0 mx-3 profissional-info">
+  <div class="row g-0 mx-3">
 
     <h3 class=" mt-4">Testimonials</h3>
 
@@ -74,9 +74,11 @@
     width: 5px;
     height: 8px;
     background-color: #00000000;
+    cursor: pointer;
   }
   .testimonials-frame::-webkit-scrollbar-thumb {
     background: #90ee90;
     border-radius: 10px;
+    cursor: pointer;
   }
 </style>

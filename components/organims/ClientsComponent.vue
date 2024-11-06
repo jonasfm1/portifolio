@@ -1,5 +1,7 @@
 <template>
-  <div class="row g-0np mt-3 p-4">
+  <div class="d-flex g-0 mt-3 p-4 logos gap-5">
+    <companyComponent />
+    <companyComponent />
     <companyComponent />
   </div>
 </template>
@@ -16,5 +18,22 @@
 </script>
 
 <style scoped>
-
+  .logos{
+    overflow-x: auto;
+  }
+  .logos{
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+  .logos::-webkit-scrollbar {
+    width: 5px;
+    height: 8px;
+    background-color: #00000000;
+    cursor: pointer;
+  }
+  .logos::-webkit-scrollbar-thumb {
+    background: #90ee90;
+    border-radius: 10px;
+    cursor: pointer;
+  }
 </style>

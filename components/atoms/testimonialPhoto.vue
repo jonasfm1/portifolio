@@ -16,8 +16,8 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.content-img img{
-  height: 4rem;
-  width: 4rem;
-}
+  .content-img img{
+    height: 4rem;
+    width: 4rem;
+  }
 </style>

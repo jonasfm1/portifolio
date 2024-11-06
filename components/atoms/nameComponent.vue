@@ -1,11 +1,16 @@
 <template>
-  <div class="name">Jonas Maciel</div>
+  <div class="name">
+    {{ name }}
+  </div>
 </template>
 
 <script lang="ts">
-  import { defineComponent } from 'vue'
+  import { defineComponent, defineProps } from 'vue'
 
   export default defineComponent({
+    props:{
+      name: String
+    },
   })
 </script>
 
