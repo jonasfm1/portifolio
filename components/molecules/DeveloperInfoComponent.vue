@@ -1,8 +1,7 @@
 <template>
 
   <!-- PRIME ROW -->
-  <div class="d-flex row">  
-
+  <div class="d-flex row">
     <!-- FRONTEND CARD -->
     <div class="col-sm-6 mb-5">
       <div @mouseenter="mouseIn" class="card frontend-card">
@@ -15,7 +14,7 @@
           <div class="ps-3">
              <h6 class="fw-bolder">Frontend Developer</h6>
              <p class="content-frontend">
-              High-quality development of interactive interfaces at the professional level.
+               {{ devInformation[0] }}
              </p>
           </div>
         </div>
@@ -34,7 +33,7 @@
           <div class="ps-3">
             <h6 class="fw-bolder">Backend Developer</h6>
             <p class="content-frontend">
-              Development of professional-level business rules with good programming practices
+              {{ devInformation[1] }}
             </p>
           </div>
         </div>
@@ -42,9 +41,9 @@
     </div>
   </div>
 
+
   <!-- SECOND ROW -->
   <div class="d-flex row">
-
     <!-- FULLSTACK CARD -->
     <div class="col-sm-6">
       <div @mouseenter="mouseIn" class="card fullstack-card">
@@ -57,7 +56,7 @@
           <div class="ps-3">
              <h6 class="fw-bolder">Web Developer</h6>
              <p class="content-frontend">
-              Professional development of interfaces, business rules and relational databases
+               {{ devInformation[2] }}
              </p>
           </div>
         </div>
@@ -74,11 +73,18 @@
   import fullstackDeveloper from '../atoms/fullstackDeveloper.vue';
 
   export default defineComponent({
+
     components: {
       frontendDeveloper,
       backendDeveloper,
       fullstackDeveloper
-    }
+    },
+    props: {
+      devInformation: {
+        type: Array,
+        required: true
+      },
+    },
   })
 </script>
 

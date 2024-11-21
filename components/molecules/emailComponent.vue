@@ -9,7 +9,7 @@
     <div class="pt-1">
       <a href="mailto:jonas.ferutcci@gmail.com" target="_blank">
         <h6>E-mail</h6>
-        <strong>jonas.ferutcci@gmail.com</strong>
+        <strong>{{ email }}</strong>
       </a>
     </div>
 
@@ -21,7 +21,9 @@
   import { defineComponent } from 'vue'
 
   export default defineComponent({
-
+    props:{
+      email: String
+    },
   })
 </script>
 

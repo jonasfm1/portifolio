@@ -8,7 +8,7 @@
     
     <div class="pt-1">
       <h6>Phone</h6>
-      <strong>+1 908 267 4697</strong>
+      <strong>{{ phone }}</strong>
     </div>
 
   </section>
@@ -19,7 +19,9 @@
   import { defineComponent } from 'vue'
 
   export default defineComponent({
-
+    props:{
+      phone: String
+    },
   })
 </script>
 

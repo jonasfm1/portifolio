@@ -8,7 +8,7 @@
     
     <div class="pt-1">
       <h6>Location</h6>
-      <strong>New York, NY</strong>
+      <strong>{{ location }}</strong>
     </div>
 
   </section>
@@ -19,7 +19,9 @@
   import { defineComponent } from 'vue'
 
   export default defineComponent({
-
+    props:{
+      location: String
+    },
   })
 </script>
 

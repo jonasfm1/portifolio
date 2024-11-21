@@ -8,7 +8,7 @@
     
     <!-- SESSAO DE DADOS DETALHADOS -->
     <section class="col-12 col-lg-6 mt-5 pt-3 pb-4 px-4 profissional-info">
-      <slot />
+      <slot :introduction="aboutMe"/>
     </section>
 
   </main>
@@ -16,10 +16,15 @@
 
 <script lang="ts">
   import { defineComponent } from 'vue'
-  import PerfilCardComponent from '~/components/organims/perfilCardComponent.vue';
+  import PerfilCardComponent from '~/components/organims/PerfilCardComponent.vue';
 
   export default defineComponent({
-    components: { PerfilCardComponent }
+    components: {
+      PerfilCardComponent
+    },
+    props:{
+      aboutMe: String
+    }
   })
 </script>
 

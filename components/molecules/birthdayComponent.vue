@@ -8,7 +8,7 @@
   
     <div>
       <h6>Birthday</h6>
-      <strong>January 24, 1993</strong>
+      <strong>{{ birthday }}</strong>
     </div>
   
   </section>
@@ -19,7 +19,9 @@
   import { defineComponent } from 'vue'
 
   export default defineComponent({
-
+    props:{
+      birthday: String
+    },
   })
 </script>
 
