@@ -11,7 +11,7 @@
   </div>
 
   <!-- CARD TESTEMONIAL COMPONENTE -->
-  <TestimonialComponent />
+  <TestimonialComponent :testimonial="witnessTestimony"/>
 
   <!-- CUSTUMERS -->
   <ClientsComponent />
@@ -34,7 +34,7 @@
       return {
         aboutMe: String,
         myDevInformation: Array,
-
+        witnessTestimony: Array,
       }
     },
     beforeMount: async function () {

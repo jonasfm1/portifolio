@@ -1,8 +1,6 @@
 <template>
   <div class="d-flex g-0 mt-3 p-4 logos gap-5">
-    <companyComponent />
-    <companyComponent />
-    <companyComponent />
+    <companyComponent v-for="image in imagesCompany" :companyName="image.name" :image="image.image" />
   </div>
 </template>
 
@@ -13,6 +11,16 @@
   export default defineComponent({
     components: {
       companyComponent,
+    },
+    data(){
+      return{
+        imagesCompany: [
+          { name: 'cadd', image: '/_nuxt/assets/img/company%27s/logo_cadd.png'},
+          { name: 'cloudfox', image: '/_nuxt/assets/img/company%27s/logo_cloudfox.png'},
+          { name: 'digital banks', image: '/_nuxt/assets/img/company%27s/logo_digital_banks.png'},
+          { name: 'perfectpay', image: '/_nuxt/assets/img/company%27s/logo_perfectpay.png'}
+        ]
+      }
     }
   })
 </script>
