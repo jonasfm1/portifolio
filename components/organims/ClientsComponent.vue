@@ -15,10 +15,10 @@
     data(){
       return{
         imagesCompany: [
-          { name: 'cadd', image: '/_nuxt/assets/img/company%27s/logo_cadd.png'},
-          { name: 'cloudfox', image: '/_nuxt/assets/img/company%27s/logo_cloudfox.png'},
-          { name: 'digital banks', image: '/_nuxt/assets/img/company%27s/logo_digital_banks.png'},
-          { name: 'perfectpay', image: '/_nuxt/assets/img/company%27s/logo_perfectpay.png'}
+          { name: 'Cad Design', image: '/_nuxt/assets/img/company%27s/logo_cadd.png'},
+          { name: 'Cloudfox', image: '/_nuxt/assets/img/company%27s/logo_cloudfox.png'},
+          { name: 'Digital banks', image: '/_nuxt/assets/img/company%27s/logo_digital_banks.png'},
+          { name: 'Perfectpay', image: '/_nuxt/assets/img/company%27s/logo_perfectpay.png'}
         ]
       }
     }

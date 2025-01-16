@@ -24,5 +24,7 @@
 </script>
 
 <style scoped>
-
+  img{
+    min-height: 69px;
+  }
 </style>

@@ -18,6 +18,7 @@
 
               <div class="row g-0">
 
+                <!-- ABOUT ME -->
                 <div class="col-3 col-xl-4 col- pe-0 ps-xl-2">
                   <li class="mx-0 active">
                     <a @click="currentView = 'About-Me'" class="nav-link px-0 fs-6 fw-bolder nav-menu" href="#">
@@ -26,6 +27,7 @@
                   </li>
                 </div>
 
+                <!-- RESUME -->
                 <div class="col-3 col-xl-3">
                   <li class="me-1">
                     <a @click="currentView = 'Resume'" class="nav-link fs-6 fw-bolder pe-lg-0 nav-menu" href="#">
@@ -34,6 +36,7 @@
                   </li>
                 </div>
 
+                <!-- PORTFOLIO -->
                 <div class="col-3 col-xl-3">
                   <li class="me-1">
                     <a @click="currentView = 'Portifolio'" class="nav-link fs-6 fw-bolder nav-menu" href="#">
@@ -42,6 +45,7 @@
                   </li>
                 </div>
 
+                <!-- CONTACT -->
                 <div class="col-2 col-xl-2">
                   <li class="me-1">
                     <a @click="currentView = 'Contact'" class="nav-link fs-6 fw-bolder nav-menu" href="#">
