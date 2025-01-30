@@ -7,7 +7,7 @@
     </div>
     
     <div class="pt-1">
-      <h6>Location</h6>
+      <h6 class="my-0">Location</h6>
       <strong>{{ location }}</strong>
     </div>
 

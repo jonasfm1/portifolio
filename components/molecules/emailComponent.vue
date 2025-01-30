@@ -8,7 +8,7 @@
     
     <div class="pt-1">
       <a href="mailto:jonas.ferutcci@gmail.com" target="_blank">
-        <h6>E-mail</h6>
+        <h6 class="my-0">E-mail</h6>
         <strong>{{ email }}</strong>
       </a>
     </div>

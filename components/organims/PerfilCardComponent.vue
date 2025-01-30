@@ -5,29 +5,29 @@
   
   <div class="d-flex justify-content-center text-white fs-2 my-3">
     <NuxtLoadingIndicator />
-    <NameComponent :name='myName' />
+    <NameComponent :name='Personal_information.myName' />
   </div>
 
   <div class="row d-flex justify-content-center g-0">
     <div class="col-7 p-2 text-center text-white role">
-      <RoleComponent :role='myRole'/>
+      <RoleComponent :role='Personal_information.myRole'/>
     </div>
   </div>
 
   <hr class="text-white ">
 
   <div class="d-sm-flex d-md-flex d-lg-block justify-content-between px-md-3">
-    <EmailComponent class="text-white my-4" :email='myEmail'/>
-    <PhoneComponent class="text-white my-3" :phone='myPhone'/>
+    <EmailComponent class="text-white my-4" :email='Personal_information.myEmail'/>
+    <PhoneComponent class="text-white my-3" :phone='Personal_information.myPhone'/>
   </div>
   
   <div class="d-sm-flex d-md-flex d-lg-block justify-content-between px-md-3">
-    <BirthdayComponent class="text-white my-4" :birthday='myBirthday'/>
-    <LocationComponent class="d-flex text-white my-4 me-4" :location='myLocation'/>
+    <BirthdayComponent class="text-white my-4" :birthday='Personal_information.myBirthday'/>
+    <LocationComponent class="d-flex text-white my-4 me-4" :location='Personal_information.myLocation'/>
   </div>
 
   <div>
-    <SocialMidiaComponent class="text-white my-4" :socialMedia='mySocialMedia'/>
+    <SocialMidiaComponent class="text-white my-4" :socialMedia='SocialMedia'/>
   </div>
 </template>
 
@@ -77,6 +77,22 @@
 
       } catch (error) {
         console.error('Server Error', error);
+      }
+    },
+    computed:{
+      Personal_information(){
+        return{
+          myName:this.myName.toString(),
+          myRole:this.myRole.toString(),
+          myEmail:this.myEmail.toString(),
+          myPhone:this.myPhone.toString(),
+          myBirthday:this.myBirthday.toString(),
+          myLocation:this.myLocation.toString(),
+          mySocialMedia:this.mySocialMedia
+        }
+      },
+      SocialMedia(){
+        return Object.values(this.mySocialMedia)
       }
     },
   })

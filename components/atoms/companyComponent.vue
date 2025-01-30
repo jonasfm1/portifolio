@@ -15,7 +15,7 @@
   export default defineComponent({
     props:{
       image:{
-        type: Array,
+        type: String,
         required: true
       },
       companyName: String

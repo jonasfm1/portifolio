@@ -6,7 +6,7 @@
     <!-- CURRENTS ACTIVITIES -->
     <div class="mx-0 my-3 pb-3 pt-3">
       <h4>What I'm Doing</h4>
-      <DeveloperInfoComponent :devInformation="myDevInformation" />
+      <DeveloperInfoComponent :devInformation="devInformation" />
     </div>
   </div>
 
@@ -45,6 +45,11 @@
 
       } catch (error) {
         console.log('Server Error', error);
+      }
+    },
+    computed:{
+      devInformation(){
+        return Object.values(this.myDevInformation)
       }
     }
   })

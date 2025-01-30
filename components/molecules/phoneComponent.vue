@@ -7,7 +7,7 @@
     </div>
     
     <div class="pt-1">
-      <h6>Phone</h6>
+      <h6 class="my-0">Phone</h6>
       <strong>{{ phone }}</strong>
     </div>
 

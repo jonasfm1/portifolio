@@ -7,7 +7,7 @@
     </div>
   
     <div>
-      <h6>Birthday</h6>
+      <h6 class="my-0">Birthday</h6>
       <strong>{{ birthday }}</strong>
     </div>
   
