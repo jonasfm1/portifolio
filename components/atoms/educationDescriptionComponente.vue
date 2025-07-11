@@ -1,5 +1,6 @@
 <template>
   <div>
+    <!-- RECEBERAR TODAS INFORMACOES DA API -->
     <!-- vertical line -->
     <div class="vertical ms-5"></div>
 
@@ -8,7 +9,7 @@
       <div class="dot col-2 ms-5 mt-1"></div>
       <div class="col-10 justify-content-center">
         <!-- Title FROM API -->
-        <h4 class="m-0">Rocketseat Aprendizado contínuo em programação</h4>
+        <h4 class="m-0">{{ schoolDetail.School }}</h4>
       </div>
     </div>
 
@@ -20,14 +21,9 @@
       <!-- block with content -->
       <div class="ms-4 pt-3">
         <!-- Year From API -->
-        <span>2025 - actual</span> 
+        <span> {{ schoolDetail.Year }} </span>
         <!-- FROM API -->
-        <article>
-          A coding school para aprender e aprimorar fundamentos da programação web
-          HTML, CSS, Git, banco de dados, back-end e front-end.
-          se especializa React, React Native, Node.js Python e muito mais com ferramentas e
-          tecnologias alinhadas com o mercado.
-        </article>
+        <article> {{ schoolDetail.description }} </article>
       </div>
 
     </div>
@@ -38,7 +34,12 @@
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-
+  props: {
+    schoolDetail: {
+      type: Object,
+      required: true
+    }
+  },
 })
 </script>
 

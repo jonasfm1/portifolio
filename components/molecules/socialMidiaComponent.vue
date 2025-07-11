@@ -4,13 +4,13 @@
     
     <div class="mx-2 mt-2">
       <a :href="socialMedia[0]" target="_blank">
-        <Icon name="bi:linkedin" size="30" color="lightgreen" />
+        <Icon name="bi:linkedin" size="30" class="icon" />
       </a>
     </div>
     
     <div class="mx-2 mt-2">
       <a :href="socialMedia[1]" target="_blank">
-        <Icon name="brandico:github-text" size="30" color="lightgreen" />
+        <Icon name="brandico:github-text" size="30" class="icon" />
       </a>
     </div>
 
@@ -33,5 +33,7 @@
 </script>
 
 <style scoped>
-
+  .icon{
+    color: lightgreen;
+  }
 </style>

@@ -6,12 +6,13 @@
     <!-- CURRENTS ACTIVITIES -->
     <div class="mx-0 my-3 pb-3 pt-3">
       <h4>What I'm Doing</h4>
+      
       <DeveloperInfoComponent :devInformation="devInformation" />
     </div>
   </div>
 
   <!-- CARD TESTEMONIAL COMPONENTE -->
-  <TestimonialComponent :testimonial="witnessTestimony"/>
+  <TestimonialComponent :testimonial="witnessTestimony "/>
 
   <!-- CUSTUMERS -->
   <ClientsComponent />
@@ -32,16 +33,17 @@
     },
     data() {
       return {
-        aboutMe: String,
-        myDevInformation: Array,
-        witnessTestimony: Array,
+        aboutMe: '',
+        myDevInformation: [],
+        witnessTestimony: [],
       }
     },
     beforeMount: async function () {
       try {
         const { Personal_information: general_information }: any = await $fetch('http://127.0.0.1:5000');
         this.aboutMe = general_information.About_me
-        this.myDevInformation = general_information.Work_on
+        this.myDevInformation = general_information.Web_Skill
+        this.witnessTestimony = general_information.Testimonial
 
       } catch (error) {
         console.log('Server Error', error);
@@ -53,7 +55,7 @@
       }
     }
   })
-  
+
 </script>
 
 <style scoped>

@@ -3,7 +3,7 @@
   <section class="d-flex">
     
     <div class="d-flex align-items-start me-3">
-      <Icon name="icon-park-solid:birthday-cake" size="38" color="lightgreen" />
+      <Icon name="icon-park-solid:birthday-cake" size="38" class="icon" />
     </div>
   
     <div>
@@ -26,5 +26,7 @@
 </script>
 
 <style scoped>
-
+  .icon{
+    color: lightgreen;
+  }
 </style>

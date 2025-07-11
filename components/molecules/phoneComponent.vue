@@ -3,7 +3,7 @@
   <section class="d-flex">
     
     <div class="d-flex align-items-center me-3">
-      <Icon name="simple-line-icons:screen-smartphone" size="38" color="lightgreen" />
+      <Icon name="simple-line-icons:screen-smartphone" size="38" class="icon" />
     </div>
     
     <div class="pt-1">
@@ -26,5 +26,7 @@
 </script>
 
 <style scoped>
-
+  .icon {
+    color: lightgreen;
+  }
 </style>

@@ -36,6 +36,8 @@
   .introduction{
     border-radius: 15px;
     background-color: #1e1e1e;
+    position: sticky;
+    top: 2rem;
   }
   .profissional-info{
     border-radius: 15px;

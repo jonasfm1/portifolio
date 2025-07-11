@@ -5,32 +5,9 @@
 
     <div class="d-flex gap-5 testimonials-frame">
 
-      <!-- 1 testimonial -->
-      <div class="col-12 col-md-6 col-lg-12 col-xl-6 mb-4">
-        <div class="d-flex ps-0 ps-md-1 ps-lg-0 justify-content-center justify-content-md-start justify-content-lg-center picture">
-          <testimonialPhoto />
-        </div>
-
-        <testimonialText />
-      </div>
-
-      <!-- 2 testimonial -->
-      <div class="col-12 col-md-6 col-lg-12 col-xl-6 mb-4">
-        <div class="d-flex ps-0 ps-md-1 ps-lg-0 justify-content-center justify-content-md-start justify-content-lg-center picture">
-          <testimonialPhoto />
-        </div>
-
-        <testimonialText />
-      </div>
-
-      <!-- 3 testimonial -->
-      <div class="col-12 col-md-6 col-lg-12 col-xl-6 mb-4">
-        <div class="d-flex ps-0 ps-md-1 ps-lg-0 justify-content-center justify-content-md-start justify-content-lg-center picture">
-          <testimonialPhoto />
-        </div>
-
-        <testimonialText />
-      </div>
+      <!-- TESTIMONIAL COMPONENTE CARD FAZER REQUEST API  APLICAR LOOP PARA CADA TETIMONIAL  PASSAR PROPS PARA O COMPONENT -->
+      <testimonialCardComponent  :allTestimonials="testimonial"/>
+      
     </div>
   </div>
 
@@ -39,16 +16,19 @@
 <script lang="ts">
   import { defineComponent } from 'vue';
 
-  import testimonialPhoto from '../atoms/testimonialPhoto.vue'
-  import testimonialText from '../molecules/testimonialText.vue'
-
+  import testimonialCardComponent from '../molecules/testimonialCardComponent.vue';
 
   export default defineComponent({
-    components:{
-      testimonialPhoto,
-      testimonialText
+  components:{
+    testimonialCardComponent
+  },
+  props:{
+    testimonial:{
+      type: Array,
     }
-  })
+  },
+})
+
 </script>
 
 <style scoped>
@@ -69,6 +49,7 @@
   .testimonials-frame{
     overflow-x: auto;
     overflow-y: hidden;
+    max-height: fit-content;
   }
   .testimonials-frame::-webkit-scrollbar {
     width: 5px;

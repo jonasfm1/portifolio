@@ -5,29 +5,29 @@
   
   <div class="d-flex justify-content-center text-white fs-2 my-3">
     <NuxtLoadingIndicator />
-    <NameComponent :name='Personal_information.myName' />
+    <NameComponent :name='myInfo.name' />
   </div>
 
   <div class="row d-flex justify-content-center g-0">
     <div class="col-7 p-2 text-center text-white role">
-      <RoleComponent :role='Personal_information.myRole'/>
+      <RoleComponent :role='myInfo.role'/>
     </div>
   </div>
 
   <hr class="text-white ">
 
   <div class="d-sm-flex d-md-flex d-lg-block justify-content-between px-md-3">
-    <EmailComponent class="text-white my-4" :email='Personal_information.myEmail'/>
-    <PhoneComponent class="text-white my-3" :phone='Personal_information.myPhone'/>
+    <EmailComponent class="text-white my-4" :email='myInfo.email'/>
+    <PhoneComponent class="text-white my-4 me-4" :phone='myInfo.phone'/>
   </div>
   
   <div class="d-sm-flex d-md-flex d-lg-block justify-content-between px-md-3">
-    <BirthdayComponent class="text-white my-4" :birthday='Personal_information.myBirthday'/>
-    <LocationComponent class="d-flex text-white my-4 me-4" :location='Personal_information.myLocation'/>
+    <BirthdayComponent class="text-white my-4" :birthday='myInfo.birthday'/>
+    <LocationComponent class="d-flex text-white my-4 me-4" :location='myInfo.location'/>
   </div>
 
   <div>
-    <SocialMidiaComponent class="text-white my-4" :socialMedia='SocialMedia'/>
+    <SocialMidiaComponent class="text-white my-4" :socialMedia='myInfo.social_Networks'/>
   </div>
 </template>
 
@@ -55,44 +55,24 @@
     },
     data() {
       return {
-        myName: String,
-        myRole: String,
-        myEmail: String,
-        myPhone: String,
-        myBirthday: String,
-        myLocation: String,
-        mySocialMedia: Array
+        myInfo: {
+          name: '',
+          role: '',
+          email: '',
+          phone: '',
+          birthday: '',
+          location: '',
+          social_Networks:[]
+        },
       }
     },
     beforeCreate: async function () {
       try {
         const { Personal_information }: any = await $fetch('http://127.0.0.1:5000');
-        this.myName = Personal_information.name;
-        this.myRole = Personal_information.role;
-        this.myEmail = Personal_information.email;
-        this.myPhone = Personal_information.phone;
-        this.myBirthday = Personal_information.birthday;
-        this.myLocation = Personal_information.location;
-        this.mySocialMedia = Personal_information.social_Networks;
+        this.myInfo = Personal_information
 
       } catch (error) {
         console.error('Server Error', error);
-      }
-    },
-    computed:{
-      Personal_information(){
-        return{
-          myName:this.myName.toString(),
-          myRole:this.myRole.toString(),
-          myEmail:this.myEmail.toString(),
-          myPhone:this.myPhone.toString(),
-          myBirthday:this.myBirthday.toString(),
-          myLocation:this.myLocation.toString(),
-          mySocialMedia:this.mySocialMedia
-        }
-      },
-      SocialMedia(){
-        return Object.values(this.mySocialMedia)
       }
     },
   })

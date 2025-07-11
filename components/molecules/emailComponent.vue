@@ -3,7 +3,7 @@
   <section class="d-flex">
 
     <div class="d-flex align-items-start me-3">
-      <Icon name="line-md:email-twotone" size="38" color="lightgreen" />
+      <Icon name="line-md:email-twotone" size="38" class="icon" />
     </div>
     
     <div class="pt-1">
@@ -28,8 +28,11 @@
 </script>
 
 <style scoped>
-a{
-  text-decoration: none;
-  color: white;
-}
+  a{
+    text-decoration: none;
+    color: white;
+  }
+  .icon {
+    color: lightgreen;
+  }
 </style>

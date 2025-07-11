@@ -1,6 +1,6 @@
 <template>
-  <div class="content-img rounded">
-    <img src="../../assets/img/me.jpeg" class="rounded">
+  <div class="content-img rounded pt-3 pb-2">
+    <img :src="photo" class="rounded">
   </div>
 </template>
 
@@ -8,9 +8,8 @@
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-  setup () {
-    return {
-    }
+  props:{
+    photo: String
   }
 })
 </script>
