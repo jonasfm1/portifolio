@@ -35,7 +35,7 @@
     // TITULO - ANO - DESCRICAO PARA educationDescriptionComponente
     beforeMount: async function () {
       try {
-        const { Education: General_education }: any = await $fetch('http://127.0.0.1:5000/education');
+        const { Education: General_education }: any = await $fetch('https://portifolio-api-asaa.onrender.com/education');
         this.schoolList = General_education
         console.log(this.schoolList);
         

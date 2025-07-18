@@ -40,7 +40,7 @@
     },
     beforeMount: async function () {
       try {
-        const { Personal_information: general_information }: any = await $fetch('http://127.0.0.1:5000');
+        const { Personal_information: general_information }: any = await $fetch('https://portifolio-api-asaa.onrender.com/');
         this.aboutMe = general_information.About_me
         this.myDevInformation = general_information.Web_Skill
         this.witnessTestimony = general_information.Testimonial
