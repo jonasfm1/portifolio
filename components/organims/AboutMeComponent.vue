@@ -42,14 +42,14 @@
     beforeMount: async function () {
       try {
         const { Personal_information: general_information }: any = await $fetch('https://portifolio-api-asaa.onrender.com/');
-        const { companies: companies_info}: any = await $fetch('http://127.0.0.1:5000/companies');
+        const { companies: companies_info}: any = await $fetch('https://portifolio-api-asaa.onrender.com/companies');
         
         this.aboutMe = general_information.About_me;
         this.myDevInformation = general_information.Web_Skill;
         this.witnessTestimony = general_information.Testimonial;
 
         this.companies = companies_info;
-        
+
       } catch (error) {
         console.log('Server Error', error);
       }
