@@ -37,7 +37,6 @@
       try {
         const { Education: General_education }: any = await $fetch('https://portifolio-api-asaa.onrender.com/education');
         this.schoolList = General_education
-        console.log(this.schoolList);
         
       } catch (error) {
         console.log('Server error', error)

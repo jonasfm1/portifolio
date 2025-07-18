@@ -1,6 +1,6 @@
 <template>
   <div class="d-flex g-0 mt-3 p-4 logos gap-5">
-    <companyComponent v-for="image in imagesCompany" :companyName="image.name" :image="image.image" />
+    <companyComponent v-for="company in companies" :companyName="company.Name" :image="company.Image" />
   </div>
 </template>
 
@@ -12,15 +12,8 @@
     components: {
       companyComponent,
     },
-    data(){
-      return{
-        imagesCompany: [
-          { name: 'Cad Design', image: '/_nuxt/assets/img/company%27s/logo_cadd.png'},
-          { name: 'Cloudfox', image: '/_nuxt/assets/img/company%27s/logo_cloudfox.png'},
-          { name: 'Digital banks', image: '/_nuxt/assets/img/company%27s/logo_digital_banks.png'},
-          { name: 'Perfectpay', image: '/_nuxt/assets/img/company%27s/logo_perfectpay.png'}
-        ]
-      }
+    props:{
+      companies: Object
     }
   })
 </script>
