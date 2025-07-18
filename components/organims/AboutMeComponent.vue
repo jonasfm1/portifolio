@@ -1,7 +1,11 @@
 <template>
   <!-- INTRODUCING MYSELF -->
   <div class="m-3">
-    <p>{{ aboutMe }}</p>
+    <article>
+      <p v-for="item in aboutMe">
+        {{ item }}.
+      </p>
+    </article>
 
     <!-- CURRENTS ACTIVITIES -->
     <div class="mx-0 my-3 pb-3 pt-3">
@@ -44,7 +48,7 @@
         const { Personal_information: general_information }: any = await $fetch('https://portifolio-api-asaa.onrender.com/');
         const { companies: companies_info}: any = await $fetch('https://portifolio-api-asaa.onrender.com/companies');
         
-        this.aboutMe = general_information.About_me;
+        this.aboutMe = general_information.About_me.split('.');
         this.myDevInformation = general_information.Web_Skill;
         this.witnessTestimony = general_information.Testimonial;
 
