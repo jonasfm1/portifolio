@@ -29,6 +29,7 @@
 import { defineComponent } from 'vue'
 import modalStacksComponente from './modalStacksComponente.vue';
 
+
 export default defineComponent({
   components: {
     modalStacksComponente
@@ -39,6 +40,10 @@ export default defineComponent({
       required: true
     },
   },
+  beforeCreate() {
+    console.log(this.role);
+  },
+  
 })
 </script>
 

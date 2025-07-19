@@ -12,6 +12,7 @@
       <div class="row g-0 modal-footer border-0">
         <button type="button" class="btn close" data-bs-dismiss="modal">Close</button>
       </div>
+      <div class="d-flex"> {{ details.frontend }}</div>
     </div>
   </div>
 </div>

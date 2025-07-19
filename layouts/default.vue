@@ -38,6 +38,7 @@
     background-color: #1e1e1e;
     position: sticky;
     top: 2rem;
+    box-shadow: -3px 3px 4px #90ee90;
   }
   .profissional-info{
     border-radius: 15px;
