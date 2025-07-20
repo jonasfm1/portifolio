@@ -40,9 +40,6 @@ export default defineComponent({
       required: true
     },
   },
-  beforeCreate() {
-    console.log(this.role);
-  },
   
 })
 </script>
