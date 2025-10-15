@@ -83,6 +83,11 @@ export default defineComponent({
 
   .content-dev-role{
     font-size: 12px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3; /* This sets the number of lines before truncation */
+    text-overflow: ellipsis;
   }
 
   .card:hover {

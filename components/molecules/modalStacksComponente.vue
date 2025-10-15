@@ -8,7 +8,10 @@
       </div>
 
       <div class="modal-body">
-        {{ details.content }}
+        <p v-for="content in roleContent">
+          {{ content }}
+        </p>
+        <span>Learn about:</span>
       </div>
 
       <div class="d-flex d-flex justify-content-between p-3">
@@ -24,7 +27,6 @@
         </div>
       </div>
 
-
       <div class="row justify-content-center g-0 modal-footer border-0">
         <div class="col-6 d-flex justify-content-center">
           <button type="button" data-bs-dismiss="modal">
@@ -37,7 +39,6 @@
 </div>
 </template>
 
-
 <script lang="ts">
 import { defineComponent } from 'vue'
 
@@ -49,8 +50,12 @@ export default defineComponent({
       required: true
     },
   },
+    computed:{
+    roleContent(){
+      return this.details.content.split("-")
+    }
+  }
 })
-
 </script>
 
 <style scoped>
