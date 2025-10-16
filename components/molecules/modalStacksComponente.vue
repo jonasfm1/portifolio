@@ -14,8 +14,8 @@
         <span>Learn about:</span>
       </div>
 
-      <div class="d-flex d-flex justify-content-between p-3">
-        <div class="justify-content-center stacks" v-for="stack in details.frontend">
+      <div class="row d-flex justify-content-between p-3">
+        <div class="col-4 col-md-3 mb-3 justify-content-center stacks" v-for="stack in details.dev_role">
 
           <div>
             <a :href="stack.source" target="_blank">
