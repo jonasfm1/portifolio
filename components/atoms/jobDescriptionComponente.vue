@@ -9,7 +9,7 @@
       <div class="dot col-2 ms-5 mt-1"></div>
       <div class="col-9 col-sm-10 justify-content-center">
         <!-- Title FROM API -->
-        <h4 class="m-0">{{ schoolDetail.School }}</h4>
+        <h4 class="m-0">{{ jobDetail.Name }}</h4>
       </div>
     </div>
 
@@ -21,9 +21,9 @@
       <!-- block with content -->
       <div class="ms-4 pt-3">
         <!-- Year From API -->
-        <span> {{ schoolDetail.Year }} </span>
+        <span> {{ jobDetail.Year }} </span>
         <!-- FROM API -->
-        <article> {{ schoolDetail.description }} </article>
+        <article> {{ jobDetail.Activities }} </article>
       </div>
 
     </div>
@@ -35,7 +35,7 @@ import { defineComponent } from 'vue'
 
 export default defineComponent({
   props: {
-    schoolDetail: {
+    jobDetail: {
       type: Object,
       required: true
     }

@@ -43,6 +43,7 @@
   import SocialMidiaComponent from '../molecules/socialMidiaComponent.vue';
 
   export default defineComponent({
+    
     components: {
       ImagePerfil, 
       NameComponent, 
@@ -75,6 +76,7 @@
         console.error('Server Error', error);
       }
     },
+    
   })
 </script>
 
