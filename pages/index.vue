@@ -19,7 +19,7 @@
               <div class="row g-0">
 
                 <!-- ABOUT ME -->
-                <div class="col-4 col-xl-4 col- pe-0 ps-xl-2">
+                <div class="col-4 col-md-3 col-xl-4 col- pe-0 ps-xl-2">
                   <li class="mx-0 active">
                     <a @click.prevent="currentView = 'About-Me'" class="nav-link px-0 fs-6 fw-bolder nav-menu" href="#">
                       About Me
@@ -28,7 +28,7 @@
                 </div>
 
                 <!-- RESUME -->
-                <div class="col-3 col-xl-3">
+                <div class="col-3 col-lg-3 col-xl-3">
                   <li class="me-1">
                     <a @click.prevent="currentView = 'Resume'" class="nav-link fs-6 fw-bolder pe-lg-0 nav-menu" href="#">
                       Resume
@@ -37,7 +37,7 @@
                 </div>
 
                 <!-- PORTFOLIO -->
-                <div class="col-3 col-xl-3">
+                <div class="col-3 col-lg-4 col-xl-3">
                   <li class="me-1">
                     <a @click.prevent="currentView = 'Portifolio'" class="nav-link fs-6 fw-bolder nav-menu" href="#">
                       Portifolio
@@ -46,7 +46,7 @@
                 </div>
 
                 <!-- CONTACT -->
-                <div class="col-3 col-xl-2">
+                <div class="col-3 col-lg-2 col-xl-2">
                   <li class="me-1">
                     <a @click.prevent="currentView = 'Contact'" class="nav-link fs-6 fw-bolder nav-menu" href="#">
                       Contact
