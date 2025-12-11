@@ -1,6 +1,6 @@
 <template>
   <div class="d-flex align-items-center px-3 me-4">
-    <Icon name="ph:book-open" size="30" class="icon" />
+    <Icon name="streamline-ultimate:human-resources-workflow-bold" size="30" class="icon" />
   </div>
   <h1 class="my-2">Experiences</h1>
 </template>

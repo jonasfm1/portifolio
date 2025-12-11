@@ -1,5 +1,5 @@
 <template>
-  <div class="col-sm-6 mb-5" data-bs-toggle="modal" :data-bs-target="'#Modal'+role.id">
+  <div class="col-sm-6 mb-5" data-bs-toggle="modal" :data-bs-target="'#'+role.id">
 
     <!-- CRIAR UM FOR PARA CADA POSICAO DO ARRAY MOSTRAR UM CARD COM SEUS CONTEUDO E MODAL  -->
     <div class="card dev-role">
@@ -20,9 +20,9 @@
 
       </div>
     </div>
-
-    <modalStacksComponente :details="role"/>
   </div>
+
+  <modalStacksComponente :details="role"/>
 </template>
 
 <script lang="ts">

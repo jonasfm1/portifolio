@@ -1,6 +1,6 @@
 <template>
 <!-- Modal -->
-<div class="modal fade" :id="'Modal'+details.id" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade" :id="details.id" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
     <div class="modal-content p-4">
       <div class="modal-header border-0">
