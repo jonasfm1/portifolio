@@ -25,6 +25,12 @@
 
 <style scoped>
   img{
-    min-height: 69px;
+    max-height: 69px;
+    filter: grayscale(100%);
+    transition: filter 0.5s ease;
+    cursor: pointer;
+  }
+  img:hover{
+    filter: grayscale(0%);
   }
 </style>
