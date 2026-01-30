@@ -25,7 +25,8 @@
 
 <style scoped>
   img{
-    max-height: 69px;
+    max-height: 70px;
+    max-width: 300px;
     filter: grayscale(100%);
     transition: filter 0.5s ease;
     cursor: pointer;
