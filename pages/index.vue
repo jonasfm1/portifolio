@@ -77,11 +77,15 @@
   import { defineComponent } from 'vue';
   import AboutMe from '~/components/organims/AboutMeComponent.vue';
   import Resume from '~/components/organims/ResumeComponent.vue';
+  import Portifolio from '~/components/organims/PortifolioComponent.vue';
+  import Contact from '~/components/organims/ContactComponent.vue';
 
   export default defineComponent({
     components: {
       AboutMe,
-      Resume
+      Resume,
+      Portifolio,
+      Contact
     },
     data(){
       return{
