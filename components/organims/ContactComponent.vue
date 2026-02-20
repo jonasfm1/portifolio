@@ -53,12 +53,9 @@ const formData = ref<ContactForm>({
   email: '',
   message: ''
 });
-
 const handleSubmit = async () => {
   try {
     console.log('Dados enviados:', formData.value);
-
-    // Integração Formspree para simplicidade
     const response = await fetch(`https://formspree.io/f/${config.public.formspreeId}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -66,7 +63,6 @@ const handleSubmit = async () => {
     });
 
     if (response.ok) {
-      alert('Mensagem enviada com sucesso!');
       formData.value = { fullName: '', email: '', message: '' };
     }
   } catch (error) {
