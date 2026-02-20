@@ -17,14 +17,10 @@
   
 </template>
 
-<script lang="ts">
-  import { defineComponent } from 'vue'
-
-  export default defineComponent({
-    props:{
-      email: String
-    },
-  })
+<script setup lang="ts">
+    defineProps<{
+      email: String,
+    }>();
 </script>
 
 <style scoped>

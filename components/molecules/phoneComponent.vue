@@ -15,14 +15,10 @@
 
 </template>
 
-<script lang="ts">
-  import { defineComponent } from 'vue'
-
-  export default defineComponent({
-    props:{
+<script setup lang="ts">
+    defineProps<{
       phone: String
-    },
-  })
+    }>();
 </script>
 
 <style scoped>

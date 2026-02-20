@@ -1,105 +1,87 @@
 <template>
-  <!-- KNOLEDGE BAR -->
   <div class="bar rounded-3 mt-3 mb-5 mx-3 pb-3">
-
-    <div class="col-12 px-4 py-2">
+    <!-- LOOP COM SKILL -->
+    <div v-for="skill in skills" :key="skill.name" class="col-12 px-4 py-2">
       <div class="d-flex p-1">
-        <Icon name="catppuccin:folder-javascript" size="30" class="icon" />
-        <span class="d-flex align-items-center ps-2">JavaScript</span>
+        <Icon :name="skill.icon" size="30" class="icon" />
+        <span class="d-flex align-items-center ps-2">{{ skill.name }}</span>
       </div>
-      <div class="javascript">
-        <div class="javascript-value"></div>
-      </div>
-    </div>
-    
-    <div class="col-12 px-4 py-2">
-      <div class="d-flex p-1">
-        <Icon name="catppuccin:python" size="30" class="icon" />
-        <span class="d-flex align-items-center ps-2">Python</span>
-      </div>
-      <div class="python">
-        <div class="python-value"></div>
-      </div>
-    </div>
-
-
-    <div class="col-12 px-4 py-2">
-      <div class="d-flex p-1">
-        <Icon name="catppuccin:php" size="30" class="icon" />
-        <span class="d-flex align-items-center ps-2">PHP</span>
-      </div>
-      <div class="php">
-        <div class="php-value"></div>
+      <div :class="skill.class">
+        <div :class="`${skill.class}-value`"></div>
       </div>
     </div>
 
   </div>
-  <!-- EXPERIENCES -->
+
   <div>
     <div class="d-flex mx-3 mt-3 mb-0">
-      <jobComponent/>
+      <jobComponent />
     </div>
     
-    <!-- LI COM COMPANIES.ACTIVYTIES -->
-    <li v-for="experience in experiences" >
-      <jobDescriptionComponente :jobDetail="experience"/>
-    </li>
+    <ul class="list-unstyled">
+      <li v-for="experience in experiences" :key="experience.Name">
+        <jobDescriptionComponente :jobDetail="experience" />
+      </li>
+    </ul>
   </div>
 
-  <!-- EDUCATION -->
   <div>
     <div class="d-flex mx-3 mt-5 mb-0">
       <educationComponent />
     </div>
     
-    <li v-for="school in schoolList" >
-      <educationDescriptionComponente :schoolDetail="school"/>
-    </li>
-
+    <ul class="list-unstyled">
+      <li v-for="school in schoolList" :key="school.School">
+        <educationDescriptionComponente :schoolDetail="school" />
+      </li>
+    </ul>
   </div>
-
-
 </template>
 
-<script lang="ts">
-  import { defineComponent } from 'vue'
-  import educationComponent from '../atoms/educationComponent.vue';
-  import educationDescriptionComponente from '../atoms/educationDescriptionComponente.vue';
-  import jobComponent from '../atoms/jobComponent.vue';
-  import jobDescriptionComponente from '../atoms/jobDescriptionComponente.vue';
+<script setup lang="ts">
+import { ref, onBeforeMount } from 'vue';
+import educationComponent from '../atoms/educationComponent.vue';
+import educationDescriptionComponente from '../atoms/educationDescriptionComponente.vue';
+import jobComponent from '../atoms/jobComponent.vue';
+import jobDescriptionComponente from '../atoms/jobDescriptionComponente.vue';
 
+// Interfaces para tipagem (conforme os contratos que criamos anteriormente)
+interface School {
+  School: string;
+  Year: string;
+  description: string;
+}
 
-  export default defineComponent({
-    components:{
-      educationComponent,
-      educationDescriptionComponente,
-      jobComponent,
-      jobDescriptionComponente
+interface Experience {
+  Name: string;
+  Year: string;
+  Activities: string;
+}
 
+// Estado reativo
+const schoolList = ref<School[]>([]);
+const experiences = ref<Experience[]>([]);
 
-    },
-    data(){
-      return{
-        schoolList: Array,
-        experiences: Array
-      }
-    },
-    // CHAMADA API AQUI ENVIAR DADOS VIA PROP PARA COMPONENT
-    // TITULO - ANO - DESCRICAO PARA educationDescriptionComponente
-    beforeMount: async function () {
-      try {
-        const { Education: General_education }: any = await $fetch('https://portifolio-api-asaa.onrender.com/education');
-        this.schoolList = General_education
+// Dados estáticos das barras de progresso para limpar o template
+const skills = [
+  { name: 'JavaScript', icon: 'catppuccin:folder-javascript', class: 'javascript' },
+  { name: 'Python', icon: 'catppuccin:python', class: 'python' },
+  { name: 'PHP', icon: 'catppuccin:php', class: 'php' }
+];
 
-        const { companies: all_experiences }: any = await $fetch('https://portifolio-api-asaa.onrender.com/companies');
-        this.experiences = all_experiences
-        
-      } catch (error) {
-        console.log('Server error', error)
-      }
-    }
-  })
+onBeforeMount(async () => {
+  try {
+    const [eduData, expData]: any = await Promise.all([
+      $fetch('https://portifolio-api-asaa.onrender.com/education'),
+      $fetch('https://portifolio-api-asaa.onrender.com/companies')
+    ]);
 
+    schoolList.value = eduData.Education;
+    experiences.value = expData.companies;
+  } catch (error) {
+    console.error('Server error', error);
+  }
+});
 </script>
 
 <style scoped>

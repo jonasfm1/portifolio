@@ -2,14 +2,10 @@
   <div>{{ role }}</div>
 </template>
 
-<script lang="ts">
-  import { defineComponent } from 'vue'
-
-  export default defineComponent({
-    props:{
-      role: String
-    },
-  })
+<script setup lang="ts">
+  defineProps<{
+    role: string;
+  }>();
 </script>
 
 <style scoped>

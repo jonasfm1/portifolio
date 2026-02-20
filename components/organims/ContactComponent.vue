@@ -47,15 +47,22 @@
   </form>
 </template>
 
-<script lang="ts">
-  import mapComponente from '../atoms/mapComponente.vue';
+<script setup lang="ts">
+import { ref } from 'vue';
+import mapComponente from '../atoms/mapComponente.vue'; // Mantendo o nome original
+import type { ContactForm } from '~/types';
 
-  export default defineComponent({
-    components:{
-      mapComponente,
-    }
-  })
+// Estado reativo para o formulário seguindo a interface
+const formData = ref<ContactForm>({
+  fullName: '',
+  email: '',
+  message: ''
+});
 
+const handleSubmit = () => {
+  console.log('Dados enviados:', formData.value);
+  // Aqui você pode adicionar a chamada para sua API de e-mail
+};
 </script>
 
 <style scoped>

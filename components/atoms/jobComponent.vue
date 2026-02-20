@@ -5,12 +5,8 @@
   <h1 class="my-2">Experiences</h1>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script setup lang="ts">
 
-export default defineComponent({
-
-})
 </script>
 
 <style scoped>

@@ -1,31 +1,21 @@
 <template>
-  <!-- PRIME ROW -->
   <div class="d-flex row">
-    <!-- STACKS CARD IN LOOP-->
-    <devRoleComponent v-for="skill in devInformation" :role="skill" />
+    <devRoleComponent 
+      v-for="skill in devInformation" 
+      :key="skill.id"
+      :role="skill" 
+    />
   </div>
-
-
 </template>
 
-<script lang="ts">
-  import { defineComponent } from 'vue';
-  import devRoleComponent from './devRoleComponent.vue';
+<script setup lang="ts">
+import devRoleComponent from './devRoleComponent.vue';
+// Importamos a interface para garantir que a lista siga o mesmo contrato
+import type { RoleDetail } from '~/types';
 
-  export default defineComponent({
-
-    components: {
-      devRoleComponent,
-    },
-    props: {
-      devInformation: {
-        type: Array,
-        required: true
-      },
-      role: Array,
-    },
-
-  })
+defineProps<{
+  devInformation: RoleDetail[];
+}>();
 </script>
 
 <style scoped>

@@ -5,12 +5,8 @@
   <h1 class="my-2">Education</h1>
 </template>
 
-<script lang="ts">
-  import { defineComponent } from 'vue'
-
-  export default defineComponent({
-    
-  })
+<script setup lang="ts">
+ 
 </script>
 
 <style scoped>

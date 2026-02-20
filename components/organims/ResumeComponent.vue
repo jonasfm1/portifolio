@@ -4,17 +4,10 @@
   </div>
 </template>
 
-<script lang="ts">
-  import { defineComponent } from 'vue'
-  import educationDetailComponent from '../molecules/educationDetailComponent.vue';
-  import educationComponent from '../atoms/educationComponent.vue';
+<script setup lang="ts">
+/*No <script setup>, as importações ficam disponíveis diretamente no template sem precisar registrá-las.*/
+import educationDetailComponent from '../molecules/educationDetailComponent.vue';
 
-  export default defineComponent({
-    components:{
-      educationDetailComponent,
-      educationComponent,
-    }
-  })
 </script>
 
 <style scoped>

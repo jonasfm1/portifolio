@@ -1,6 +1,8 @@
 <template>
   <div class="p-1">
-    <h3 class="text-center text-lg-center">{{ testimonialName }}</h3>
+    <h3 class="text-center text-lg-center">
+      {{ testimonialName }}
+    </h3>
 
     <article class="px-4 py-1">
       {{ testimonial }}
@@ -8,17 +10,13 @@
   </div>
 </template>
 
-<script>
-  export default {
-    setup() {
-      return {
-      }
-    },
-    props:{
-      testimonialName: String,
-      testimonial: String
-    }
-  }
+<script setup lang="ts">
+// Definimos as props diretamente com TypeScript
+// Isso substitui o objeto props: { ... } e a função setup()
+defineProps<{
+  testimonialName: string;
+  testimonial: string;
+}>();
 </script>
 
 <style lang="scss" scoped>

@@ -1,21 +1,23 @@
 <template>
   <div class="d-flex g-0 mt-3 p-4 logos gap-5">
-    <companyComponent v-for="company in companies" :companyName="company.Name" :image="company.Image" />
+    <CompanyComponent
+      v-for="(company, index) in companies"
+      :key="index"
+      :company-name="company.Name"
+      :image="company.Image"
+    />
   </div>
 </template>
 
-<script lang="ts">
-  import {defineComponent} from 'vue'
-  import companyComponent from "../atoms/companyComponent.vue";
+<script setup lang="ts">
+import type { Company } from '../../types/index'; // Importando o tipo global
+import CompanyComponent from "../atoms/companyComponent.vue";
 
-  export default defineComponent({
-    components: {
-      companyComponent,
-    },
-    props:{
-      companies: Object
-    }
-  })
+interface Props {
+  companies: Company[];
+}
+
+defineProps<Props>();
 </script>
 
 <style scoped>

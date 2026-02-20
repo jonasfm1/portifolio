@@ -15,14 +15,11 @@
 
 </template>
 
-<script lang="ts">
-  import { defineComponent } from 'vue'
+<script setup lang="ts">
 
-  export default defineComponent({
-    props:{
-      location: String
-    },
-  })
+    defineProps<{
+      location: String,
+    }>();
 </script>
 
 <style scoped>

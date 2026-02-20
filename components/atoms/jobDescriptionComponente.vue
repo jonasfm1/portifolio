@@ -30,17 +30,16 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script setup lang="ts">
+  // Definindo a interface para tipagem do objeto jobDetail
+  interface JobDetail {
+    Name: string;
+    Year: string;
+    Activities: string;
+  }
 
-export default defineComponent({
-  props: {
-    jobDetail: {
-      type: Object,
-      required: true
-    }
-  },
-})
+  // Definindo as props usando a macro defineProps
+  defineProps<{jobDetail: JobDetail;}>();
 </script>
 
 <style scoped>

@@ -1,47 +1,29 @@
 <template>
-  <div class="col-sm-6 mb-5" data-bs-toggle="modal" :data-bs-target="'#'+role.id">
-
-    <!-- CRIAR UM FOR PARA CADA POSICAO DO ARRAY MOSTRAR UM CARD COM SEUS CONTEUDO E MODAL  -->
+  <div class="col-sm-6 mb-5" data-bs-toggle="modal" :data-bs-target="'#' + role.id">
     <div class="card dev-role">
-
       <div class="card-body d-flex">
-        <!-- IMAGE DIV -->
         <div>
-          <img :src="role.imagen" class="dev-role-img">
+          <img :src="role.imagen" class="dev-role-img" alt="role-icon">
         </div>
-
-        <!-- CONTENT DIV -->
         <div class="ps-3">
-            <h6 class="fw-bolder">{{ role.role }}</h6>
-            <p class="content-dev-role">
-              {{ role.content }}
-            </p>
+          <h6 class="fw-bolder">{{ role.role }}</h6>
+          <p class="content-dev-role">
+            {{ role.content }}
+          </p>
         </div>
-
       </div>
     </div>
   </div>
-
-  <modalStacksComponente :details="role"/>
+  
+  <modalStacksComponent :details="role" />
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
-import modalStacksComponente from './modalStacksComponente.vue';
+<script setup lang="ts">
+import modalStacksComponent from './modalStacksComponente.vue';
+import type { DevRoleProps } from '~/types';
 
-
-export default defineComponent({
-  components: {
-    modalStacksComponente
-  },
-  props: {
-    role:{
-      type: Object,
-      required: true
-    },
-  },
-  
-})
+// Agora o defineProps recebe apenas 1 argumento de tipo
+defineProps<DevRoleProps>();
 </script>
 
 <style scoped>

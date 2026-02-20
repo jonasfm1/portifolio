@@ -2,12 +2,8 @@
   <img src="https://github.com/jonasfm1.png" alt="imagem de perfil">
 </template>
 
-<script lang="ts">
-  import { defineComponent } from 'vue'
+<script setup lang="ts">
 
-  export default defineComponent({
-    
-  })
 </script>
 
 <style scoped>

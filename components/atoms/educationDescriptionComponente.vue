@@ -30,17 +30,18 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script setup lang="ts">
+// Definimos a estrutura do objeto para o TypeScript te ajudar com o IntelliSense
+interface SchoolDetail {
+  School: string;
+  Year: string;
+  description: string;
+}
 
-export default defineComponent({
-  props: {
-    schoolDetail: {
-      type: Object,
-      required: true
-    }
-  },
-})
+// Usamos a macro defineProps para capturar a prop 'schoolDetail'
+defineProps<{
+  schoolDetail: SchoolDetail;
+}>();
 </script>
 
 <style scoped>

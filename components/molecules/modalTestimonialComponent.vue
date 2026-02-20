@@ -17,17 +17,19 @@
 </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script setup lang="ts">
+// Definimos a interface baseada nos campos que o seu template utiliza
+interface TestimonialDescription {
+  Company: string;
+  Name: string;
+  Testimonial: string;
+  Site: string;
+}
 
-export default defineComponent({
-    props:{
-      description:{
-        type:Object,
-        required: true
-      }
-    }
-})
+// Definindo a prop seguindo o padrão do projeto
+defineProps<{
+  description: TestimonialDescription;
+}>();
 </script>
 
 <style scoped>

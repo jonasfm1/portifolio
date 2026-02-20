@@ -1,34 +1,25 @@
 <template>
   <div class="row g-0 mx-3">
-
-    <h3 class=" mt-4">Testimonials</h3>
-
+    <h3 class="mt-4">Testimonials</h3>
     <div class="d-flex gap-5 testimonials-frame">
-
-      <!-- TESTIMONIAL COMPONENTE CARD FAZER REQUEST API  APLICAR LOOP PARA CADA TETIMONIAL  PASSAR PROPS PARA O COMPONENT -->
-      <testimonialCardComponent  :allTestimonials="testimonial"/>
-      
+      <testimonialCardComponent 
+        v-for="(item, index) in testimonial" 
+        :key="index"
+        :allTestimonials="item" 
+      />
     </div>
   </div>
-
 </template>
 
-<script lang="ts">
-  import { defineComponent } from 'vue';
+<script setup lang="ts">
+import testimonialCardComponent from '../molecules/testimonialCardComponent.vue';
+import type { Testimony } from '~/types/index';
 
-  import testimonialCardComponent from '../molecules/testimonialCardComponent.vue';
+interface Props {
+  testimonial: Testimony[];
+}
 
-  export default defineComponent({
-  components:{
-    testimonialCardComponent
-  },
-  props:{
-    testimonial:{
-      type: Array,
-    }
-  },
-})
-
+defineProps<Props>();
 </script>
 
 <style scoped>
