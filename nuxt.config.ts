@@ -13,4 +13,9 @@ export default defineNuxtConfig({
   css: ["bootstrap/dist/css/bootstrap.min.css"],
   modules: ["usebootstrap"],
   compatibilityDate: "2025-03-23",
+  runtimeConfig: {
+    public: {
+      formspreeId: process.env.FORMSPREE_ID
+    }
+  }
 })

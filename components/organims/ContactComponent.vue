@@ -1,36 +1,31 @@
 <template>
   <div class="mb-3">
-    <!-- MAP GOOGLE -->
     <mapComponente />
   </div>
-  <!-- FORM CONTACT -->
-  <form class="row mx-3 g-3 needs-validation">
+  <form class="row mx-3 g-3 needs-validation" @submit.prevent="handleSubmit">
     <div class="mt-5 d-flex justify-content-between">
-
       <div class="col-md-5">
         <div class="form-group">
           <label for="floatingInputGrid">Full Name</label>
-          <input type="name" class="form-control p-3" id="floatingInputGrid" placeholder="FullName">
-
+          <input type="name" class="form-control p-3" id="floatingInputGrid" placeholder="FullName" v-model="formData.fullName" required>
         </div>
       </div>
-
       <div class="col-md-5">
         <div class="form-group">
           <label for="floatingInputGrid">Email address</label>
-          <input type="email" class="form-control p-3" id="floatingInputGrid" placeholder="name@example.com">
+          <input type="email" class="form-control p-3" id="floatingInputGrid" placeholder="name@example.com" v-model="formData.email" required>
         </div>
       </div>
     </div>
 
     <div class="form-group mt-5">
       <label for="floatingTextarea2Disabled">Your Message</label>
-      <textarea class="form-control p-3" placeholder="Leave your message here" id="floatingTextarea2Disabled" style="height: 100px"></textarea>
+      <textarea class="form-control p-3" placeholder="Leave your message here" id="floatingTextarea2Disabled" v-model="formData.message" required style="height: 100px"></textarea>
     </div>
 
     <div class="mt-4 d-grid d-flex justify-content-end">
       <div class="col-md-4 col-lg-6 d-flex justify-content-end">
-        <button disabled>
+        <button>
           <div class="svg-wrapper-1">
             <div class="svg-wrapper">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
@@ -43,25 +38,41 @@
         </button>
       </div>
     </div>
-
   </form>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import mapComponente from '../atoms/mapComponente.vue'; // Mantendo o nome original
+import mapComponente from '../atoms/mapComponente.vue';
 import type { ContactForm } from '~/types';
+const config = useRuntimeConfig();
 
-// Estado reativo para o formulário seguindo a interface
+// Estado reativo seguindo a interface original
 const formData = ref<ContactForm>({
   fullName: '',
   email: '',
   message: ''
 });
 
-const handleSubmit = () => {
-  console.log('Dados enviados:', formData.value);
-  // Aqui você pode adicionar a chamada para sua API de e-mail
+const handleSubmit = async () => {
+  try {
+    console.log('Dados enviados:', formData.value);
+
+    // Integração Formspree para simplicidade
+    const response = await fetch(`https://formspree.io/f/${config.public.formspreeId}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData.value)
+    });
+
+    if (response.ok) {
+      alert('Mensagem enviada com sucesso!');
+      formData.value = { fullName: '', email: '', message: '' };
+    }
+  } catch (error) {
+    console.error('Erro ao enviar e-mail:', error);
+    alert('Erro ao enviar a mensagem.');
+  }
 };
 </script>
 
