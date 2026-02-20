@@ -14,8 +14,10 @@ export default defineNuxtConfig({
   modules: ["usebootstrap"],
   compatibilityDate: "2025-03-23",
   runtimeConfig: {
+    // Chaves aqui só ficam disponíveis no servidor (Server-side)
+    formspreeId: process.env.FORMSPREE_ID,
     public: {
-      formspreeId: process.env.FORMSPREE_ID
+      // Chaves aqui ficam visíveis no navegador (Client-side)
     }
   }
 })

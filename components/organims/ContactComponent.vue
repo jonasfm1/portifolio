@@ -7,13 +7,13 @@
       <div class="col-md-5">
         <div class="form-group">
           <label for="fullName">Full Name</label>
-          <input type="name" class="form-control p-3" id="fullName" placeholder="FullName" v-model="formData.fullName" required>
+          <input type="name" class="form-control p-3" id="fullName" placeholder="FullName" v-model="formData.fullName" autocomplete="name" required>
         </div>
       </div>
       <div class="col-md-5">
         <div class="form-group">
           <label for="email">Email address</label>
-          <input type="email" class="form-control p-3" id="email" placeholder="name@example.com" v-model="formData.email" required>
+          <input type="email" class="form-control p-3" id="email" placeholder="name@example.com" v-model="formData.email" autocomplete="email" required>
         </div>
       </div>
     </div>
@@ -56,7 +56,7 @@ const formData = ref<ContactForm>({
 const handleSubmit = async () => {
   try {
     console.log('Dados enviados:', formData.value);
-    const response = await fetch(`https://formspree.io/f/${config.public.formspreeId}`, {
+    const response = await fetch('/api/send-email', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formData.value)
