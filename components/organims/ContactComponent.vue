@@ -63,6 +63,7 @@ const handleSubmit = async () => {
     });
 
     if (response.ok) {
+      alert('Envio bem sucedido.');
       formData.value = { fullName: '', email: '', message: '' };
     }
   } catch (error) {
