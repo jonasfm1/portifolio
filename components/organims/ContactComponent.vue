@@ -7,20 +7,20 @@
       <div class="col-md-5">
         <div class="form-group">
           <label for="floatingInputGrid">Full Name</label>
-          <input type="name" class="form-control p-3" id="floatingInputGrid" placeholder="FullName" v-model="formData.fullName" required>
+          <input type="name" class="form-control p-3" id="fullName" placeholder="FullName" v-model="formData.fullName" required>
         </div>
       </div>
       <div class="col-md-5">
         <div class="form-group">
           <label for="floatingInputGrid">Email address</label>
-          <input type="email" class="form-control p-3" id="floatingInputGrid" placeholder="name@example.com" v-model="formData.email" required>
+          <input type="email" class="form-control p-3" id="email" placeholder="name@example.com" v-model="formData.email" required>
         </div>
       </div>
     </div>
 
     <div class="form-group mt-5">
       <label for="floatingTextarea2Disabled">Your Message</label>
-      <textarea class="form-control p-3" placeholder="Leave your message here" id="floatingTextarea2Disabled" v-model="formData.message" required style="height: 100px"></textarea>
+      <textarea class="form-control p-3" placeholder="Leave your message here" id="message" v-model="formData.message" required style="height: 100px"></textarea>
     </div>
 
     <div class="mt-4 d-grid d-flex justify-content-end">
